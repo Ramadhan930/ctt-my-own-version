@@ -1,0 +1,365 @@
+/* ========== Global Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== App Container ========== */
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========== Note List Items ========== */
+.note-item {
+  background: #1e1e1e;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.note-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(98, 0, 234, 0.4); /* ungu villain */
+}
+
+.note-item h3 {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  color: #bb86fc; /* ungu neon */
+}
+
+.note-item p {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+/* ========== Note Detail Page ========== */
+.note-detail {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(98, 0, 234, 0.4);
+}
+
+.note-detail h1 {
+  margin-bottom: 10px;
+  color: #bb86fc;
+}
+
+.note-detail h2 {
+  margin-bottom: 10px;
+}
+
+.note-detail p {
+  color: #ccc;
+}
+
+.note-date {
+  color: #888;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.note-body {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Action buttons */
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Tombol danger */
+.btn-clear {
+  background: #cf6679;
+  color: white;
+}
+
+.btn-clear:hover {
+  background: #a83d51;
+}
+
+/* ========== Note Form ========== */
+.note-form {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(98, 0, 234, 0.4);
+}
+
+.note-form input,
+.note-form textarea,
+.note-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #2a2a2a;
+  color: #eee;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+  outline: none;
+  border-color: #bb86fc;
+  box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.3);
+}
+
+.note-form button {
+  background: #6200ea;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.note-form button:hover {
+  background: #3700b3;
+}
+
+/* ========== Search Bar ========== */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #2a2a2a;
+  color: #eee;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #bb86fc;
+  box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.3);
+}
+
+/* Container untuk tombol navigasi */
+.nav-links {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Styling tombol navigasi */
+.btn-link {
+  background: #6200ea;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-link:hover {
+  background: #3700b3;
+}
+
+.btn-link:active {
+  background: #1e0080;
+}
+
+/* Input judul */
+.note-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #2a2a2a;
+  color: #eee;
+}
+
+/* Input body */
+.note-body-input {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #2a2a2a;
+  font-size: 1rem;
+  outline: none;
+  line-height: 1.5;
+  color: #eee;
+}
+
+/* Container tombol */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Tombol umum */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Tombol utama (ungu villain) */
+.btn-keep {
+  background: #6200ea;
+  color: white;
+}
+
+.btn-keep:hover {
+  background: #3700b3;
+}
+
+/* Tombol cancel */
+.btn-cancel {
+  background: #333;
+  color: #eee;
+}
+
+.btn-cancel:hover {
+  background: #444;
+}
+
+/* ========== Utility ========== */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+/* not have archived */
+.empty-archive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.empty-archive img {
+  width: 800px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 8px rgba(128, 0, 255, 0.6));
+  border-radius: 12px;
+}
+
+.empty-archive p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #b97aff; /* ungu villain */
+  margin-bottom: 20px;
+}
+
+.empty-archive .btn {
+  background-color: #7f00ff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.empty-archive .btn:hover {
+  background-color: #9a33ff;
+  box-shadow: 0 0 12px rgba(127, 0, 255, 0.8);
+}
+
+.empty-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.empty-notes img {
+  width: 800px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(127, 0, 255, 0.7));
+  border-radius: 12px;
+}
+
+.empty-notes p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #c78aff;
+  margin-bottom: 20px;
+}
+
+.empty-notes .btn {
+  background-color: #7f00ff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.empty-notes .btn:hover {
+  background-color: #9a33ff;
+  box-shadow: 0 0 12px rgba(127, 0, 255, 0.8);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .app {
+    padding: 15px;
+  }
+
+  .note-item h3 {
+    font-size: 1rem;
+  }
+
+  .note-form input,
+  .note-form textarea,
+  .note-form button,
+  .search-bar input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
